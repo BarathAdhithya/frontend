@@ -31,11 +31,12 @@ public class ApplicationContextConfig {
 	
 	@Bean(name="dataSource")
 	 public DataSource getDataSource(){
+	
 	DriverManagerDataSource dataSource=new DriverManagerDataSource();	
 	dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 	dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-	dataSource.setUsername("rajesh");
-	dataSource.setPassword("rajesh");
+	dataSource.setUsername("BARATH");
+	dataSource.setPassword("barath");
 	return dataSource;
 	}
 
@@ -62,7 +63,7 @@ public SessionFactory getSessionFactory(DataSource dataSource){
 	sessionBuilder.addAnnotatedClass(Friend.class);
 	sessionBuilder.addAnnotatedClass(Message.class);
 	sessionBuilder.addAnnotatedClass(OutputMessage.class);
-	/*sessionBuilder.addAnnotatedClass(Job.class);*/
+	sessionBuilder.addAnnotatedClass(Job.class);
 	return sessionBuilder.buildSessionFactory();
 	
 }
@@ -129,10 +130,10 @@ public ForumCommetDAO getForumCommetDAO(SessionFactory sessionFactory){
 	return new ForumCommetDAOImpl(sessionFactory);
 }
 
-/*@Autowired
+@Autowired
 @Bean(name="jobDAO")
 public JobDAO getJobDAO(SessionFactory sessionFactory){
 	
 	return new JobDAOImpl(sessionFactory);
-}*/
+}
 }

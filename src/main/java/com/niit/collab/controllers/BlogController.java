@@ -42,7 +42,12 @@ public class BlogController {
 	@Autowired
 private BlogDAO blogDAO;
 	@Autowired
-private BlogLikesDAO blogLikesDAO;/*
+private BlogLikesDAO blogLikesDAO;
+
+	@Autowired
+	
+	private HttpSession session;
+	/*
 private BlogLikes blogLikes;*/
 
 
